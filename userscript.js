@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Reddit on Google Search Mobile
-// @version      1.1
+// @name         Reddit on Google Search
+// @version      1.0.3
 // @description  Adds a button to search Reddit via Google Search
-// @author       Pablocp19
-// @namespace    https://github.com/pablocp19/Reddit-on-Google-Search-Mobile (based on Alexyoe's https://github.com/Alexyoe/Reddit-on-Google-Search)
+// @author       Alexyoe
+// @namespace    https://github.com/Alexyoe/Reddit-on-Google-Search
 // @license      MIT
 // @include      http*://www.google.*/search*
 // @include      http*://google.*/search*
@@ -13,17 +13,16 @@
 const queryRegex = /q=[^&]+/g;
 const siteRegex = /\+site(?:%3A|\:).+\.[^&+]+/g;
 const redditUrl = "+site%3Areddit.com";
-const isImageSearch = /[?&]tbm=isch/.test(location.search);
 
-const existingLinks = Array.from(document.querySelectorAll('a.LatpMc.nPDzT'));
-var existingLink = existingLinks.find(link => link.textContent.includes('Vídeos'));
-var parentDiv = existingLink.parentNode;
+var existingDivs = Array.from(document.querySelectorAll('div.T3FoJb'));
+var existingDiv = existingDivs.find(div => div.textContent.includes('Vídeos'));
+var parentDiv = existingDiv.parentNode;
 
 var newLinkDiv = document.createElement('div');
 newLinkDiv.setAttribute('class', 'T3FoJb');
 newLinkDiv.setAttribute('role', 'listitem');
-newLinkDiv.setAttribute('data-hveid', 'CAwQAA');
-newLinkDiv.setAttribute('data-ved', '2ahUKEwj8ufnyoqqAAxV_UaQEHZG_AfkQtoAJKAB6BAgMEAA');
+newLinkDiv.setAttribute('data-hveid', 'CAgQAA');
+newLinkDiv.setAttribute('data-ved', '2ahUKEwiB8-mnqqqAAxXyQaQEHY8NAGQQtoAJKAB6BAgMEAA');
 
 var newLink = document.createElement('a');
 newLink.setAttribute('class', 'LatpMc nPDzT');
@@ -50,4 +49,4 @@ newDiv.appendChild(newSpan);
 newLink.appendChild(newDiv);
 newLinkDiv.appendChild(newLink);
 
-parentDiv.insertBefore(newLinkDiv, existingLink.nextSibling);
+parentDiv.insertBefore(newLinkDiv, existingDiv.nextSibling);
