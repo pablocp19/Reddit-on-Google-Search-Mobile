@@ -2,8 +2,8 @@
 // @name         Reddit on Google Search
 // @version      1.0.3
 // @description  Adds a button to search Reddit via Google Search
-// @author       Alexyoe
-// @namespace    https://github.com/Alexyoe/Reddit-on-Google-Search
+// @author       Pablocp19
+// @namespace    https://github.com/pablocp19/Reddit-on-Google-Search-Mobile (based on Alexyoe's https://github.com/Alexyoe/Reddit-on-Google-Search)
 // @license      MIT
 // @include      http*://www.google.*/search*
 // @include      http*://google.*/search*
